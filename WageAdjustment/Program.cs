@@ -33,9 +33,9 @@ namespace WageAdjustment
                         Console.Write("Digite o cargo do funcionário: ");
                         string occupation = Console.ReadLine();
                         Console.Write("Digite o salário do funcionário: ");
-                        double currentSalary = Convert.ToDouble(Console.ReadLine());
+                        double currentSalary = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                         Console.Write("Digite o ano de contratação do funcionário: ");
-                        int hiringYear = Convert.ToInt32(Console.ReadLine());
+                        int hiringYear = int.Parse(Console.ReadLine());
 
                         Console.Clear();
 
@@ -44,18 +44,20 @@ namespace WageAdjustment
                             Collaborator newCollaborator = new Collaborator(name, occupation, currentSalary, hiringYear);
                             collaborators.Add(newCollaborator);
 
-                            Console.WriteLine("Funcionário novo cadastrado com sucesso!\n");
+                            Console.WriteLine("Funcionário cadastrado com sucesso!\n");
                         }
                         else // colaborador antigo
                         {
                             CollaboratorOld newCollaborator = new CollaboratorOld(name, occupation, currentSalary, hiringYear);
                             collaborators.Add(newCollaborator);
 
-                            Console.WriteLine("Funcionário antigo cadastrado com sucesso!\n");
+                            Console.WriteLine("Funcionário cadastrado com sucesso!");
+                            Console.WriteLine("De acordo com as regras de negócio, esse colaborador irá um ajuste salarial de 10%.");
 
                             if (newCollaborator.CurrentSalary > 7000) // colaborador antigo com salário superior a 7k
                             {
                                 newCollaborator.SalaryAdjustment(10);
+                                Console.WriteLine("Novo salário de " + newCollaborator.Name + ": R$" + newCollaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
                             }
                             else
                             {

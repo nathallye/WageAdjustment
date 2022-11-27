@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace WageAdjustment.Models
 {
@@ -19,7 +20,7 @@ namespace WageAdjustment.Models
 
         public override string ToString() 
         {
-            return "Nome: " + Name + " - Função: " + Occupation + " - Ano de contratação: " + HiringYear + " - Salário atual: R$ " + CurrentSalary;
+            return "Nome: " + Name + " - Função: " + Occupation + " - Ano de contratação: " + HiringYear + " - Salário atual: R$ " + CurrentSalary.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
