@@ -39,7 +39,7 @@ namespace WageAdjustment
 
                         Console.Clear();
 
-                        if (hiringYear > 2020) // colaborador novo
+                        if (hiringYear > 2019) // colaborador novo
                         {
                             Collaborator newCollaborator = new Collaborator(name, occupation, currentSalary, hiringYear);
                             collaborators.Add(newCollaborator);
