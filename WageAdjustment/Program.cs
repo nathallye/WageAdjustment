@@ -59,7 +59,7 @@ namespace WageAdjustment
                                 newCollaborator.SalaryAdjustment(10);
                                 Console.WriteLine("Novo salário de " + newCollaborator.Name + ": R$" + newCollaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
                             }
-                            else
+                            else // colaborador antigo com salário inferior ou igual a 7k
                             {
                                 Console.WriteLine("Esse colaborador é antigo e possui salário menor ou igual a R$7000,00.");
                                 Console.Write("Entre com a porcentagem para ajuste salarial: ");
