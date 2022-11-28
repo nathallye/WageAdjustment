@@ -41,31 +41,31 @@ namespace WageAdjustment
 
                         if (hiringYear > 2019) // colaborador novo
                         {
-                            Collaborator newCollaborator = new Collaborator(name, occupation, currentSalary, hiringYear);
-                            collaborators.Add(newCollaborator);
+                            Collaborator colaborator = new Collaborator(name, occupation, currentSalary, hiringYear);
+                            collaborators.Add(colaborator);
 
                             Console.WriteLine("Funcionário cadastrado com sucesso!\n");
                         }
                         else // colaborador antigo
                         {
-                            CollaboratorOld newCollaborator = new CollaboratorOld(name, occupation, currentSalary, hiringYear);
-                            collaborators.Add(newCollaborator);
+                            CollaboratorOld colaborator = new CollaboratorOld(name, occupation, currentSalary, hiringYear);
+                            collaborators.Add(colaborator);
 
                             Console.WriteLine("Funcionário cadastrado com sucesso!");
 
-                            if (newCollaborator.CurrentSalary > 7000) // colaborador antigo com salário superior a 7k
+                            if (colaborator.CurrentSalary > 7000) // colaborador antigo com salário superior a 7k
                             {
                                 Console.WriteLine("De acordo com as regras de negócio, esse colaborador irá receber um ajuste salarial de 10%.");
-                                newCollaborator.SalaryAdjustment(10);
-                                Console.WriteLine("Novo salário de " + newCollaborator.Name + ": R$" + newCollaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
+                                colaborator.SalaryAdjustment(10);
+                                Console.WriteLine("Novo salário de " + colaborator.Name + ": R$" + colaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
                             }
                             else // colaborador antigo com salário inferior ou igual a 7k
                             {
                                 Console.WriteLine("Esse colaborador é antigo e possui salário menor ou igual a R$7000,00.");
                                 Console.Write("Entre com a porcentagem para ajuste salarial: ");
                                 double porcent = Convert.ToDouble(Console.ReadLine());
-                                newCollaborator.SalaryAdjustment(porcent);
-                                Console.WriteLine("Novo salário de " + newCollaborator.Name + ": R$" + newCollaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
+                                colaborator.SalaryAdjustment(porcent);
+                                Console.WriteLine("Novo salário de " + colaborator.Name + ": R$" + colaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
                                 Console.WriteLine();
                             }
                         }
