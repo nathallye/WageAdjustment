@@ -52,10 +52,10 @@ namespace WageAdjustment
                             collaborators.Add(newCollaborator);
 
                             Console.WriteLine("Funcionário cadastrado com sucesso!");
-                            Console.WriteLine("De acordo com as regras de negócio, esse colaborador irá um ajuste salarial de 10%.");
 
                             if (newCollaborator.CurrentSalary > 7000) // colaborador antigo com salário superior a 7k
                             {
+                                Console.WriteLine("De acordo com as regras de negócio, esse colaborador irá receber um ajuste salarial de 10%.");
                                 newCollaborator.SalaryAdjustment(10);
                                 Console.WriteLine("Novo salário de " + newCollaborator.Name + ": R$" + newCollaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
                             }
@@ -65,6 +65,7 @@ namespace WageAdjustment
                                 Console.Write("Entre com a porcentagem para ajuste salarial: ");
                                 double porcent = Convert.ToDouble(Console.ReadLine());
                                 newCollaborator.SalaryAdjustment(porcent);
+                                Console.WriteLine("Novo salário de " + newCollaborator.Name + ": R$" + newCollaborator.CurrentSalary.ToString("F2", CultureInfo.InvariantCulture) + "\n");
                                 Console.WriteLine();
                             }
                         }
