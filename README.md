@@ -1,4 +1,4 @@
-# Resolução do exercício proposto no treinamento interno da Avanade em C#.
+# Resolução do exercício proposto no treinamento interno da Avanade em .NET.
 
 ## Desafio
 - Você deverá receber o nome do colaborador, cargo e salário atual;
